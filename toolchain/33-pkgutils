@@ -4,7 +4,7 @@ source="http://crux.nu/files/$name-$version.tar.xz"
 
 build() {
 	cd $name-$version
-
+	export PKG_CONFIG_PATH=/tools/lib/pkgconfig/
 	patch -Np1 -i $PATCHDIR/pkgutils_ignore-conflict.patch
 	patch -Np1 -i $PATCHDIR/pkgutils_remove-libtool.patch
 	patch -Np1 -i $PATCHDIR/pkgutils_add-compress-infopages.patch
